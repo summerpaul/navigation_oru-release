@@ -8,6 +8,6 @@
     args="0 0 0 0 0 0 /world map 100" />
 
 <node name="map_server" pkg="map_server" type="map_server" args="$(find gazebo_worlds_oru)/maps/robot_lab_gazebo.yaml">
-	<param name="frame_id" value="/world" />
+	<param name="frame_id" value="world" />
 </node>
 </launch>

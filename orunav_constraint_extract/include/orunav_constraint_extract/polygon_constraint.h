@@ -426,7 +426,7 @@ namespace constraint_extract {
       ret.info.width = 6 / params_.resolution;
       ret.info.height = 6 / params_.resolution;
       ret.info.origin = orunav_conversions::createMsgFromPose2d(orunav_generic::Pose2d(-3.0, -3.0, 0.));
-      ret.header.frame_id = std::string("/world");
+      ret.header.frame_id = std::string("world");
     
       ret.data.resize(ret.info.width * ret.info.height);
       std::fill(ret.data.begin(), ret.data.end(), 0);

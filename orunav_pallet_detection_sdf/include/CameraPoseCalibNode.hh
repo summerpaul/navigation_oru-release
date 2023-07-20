@@ -338,7 +338,7 @@ class CameraPoseCalibNode
             tf::poseEigenToTF (aligned_Tcam_non_sdf, tf_T);
             geometry_msgs::PoseStamped pose_stamped;
             pose_stamped.header.stamp = msg->header.stamp;
-            pose_stamped.header.frame_id = "/world";
+            pose_stamped.header.frame_id = "world";
             pose_stamped.pose = sdf::sdf_transformToPose(tf_T);
             camera_poses_pub_.publish(pose_stamped);
 

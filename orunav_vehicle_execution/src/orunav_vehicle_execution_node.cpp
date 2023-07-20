@@ -1646,7 +1646,7 @@ public:
     // 2) Check the 2d points if they are inside the convexHull of the regions.
     if (!tf_listener_.waitForTransform(
             msg->header.frame_id,
-            "/world",
+            "world",
             msg->header.stamp + ros::Duration().fromSec(msg->ranges.size() * msg->time_increment),
             ros::Duration(1.0)))
     {
@@ -1654,7 +1654,7 @@ public:
     }
 
     sensor_msgs::PointCloud cloud, cloud_ebrake, cloud_slowdown, cloud_ignore;
-    laser_projection_.transformLaserScanToPointCloud("/world", *msg,
+    laser_projection_.transformLaserScanToPointCloud("world", *msg,
                                                      cloud, tf_listener_);
 
     cloud_ebrake.header = cloud.header;

@@ -248,7 +248,7 @@ public:
 
     paramHandle.param<std::string>("base_link_frame_id", base_link_frame_id_, std::string("base_link"));
     paramHandle.param<std::string>("camera_frame_id", camera_frame_id_, std::string(""));
-    paramHandle.param<std::string>("global_frame_id", global_frame_id_, std::string("/world"));
+    paramHandle.param<std::string>("global_frame_id", global_frame_id_, std::string("world"));
 
     paramHandle.param<double>("floor_distance_thresh", floor_distance_thresh_, 0.01);
     paramHandle.param<int>("min_nb_matched_points", min_nb_matched_points_, 10000);
@@ -929,7 +929,7 @@ public:
           {
 	    
 	    tf_listener.lookupTransform(base_link_frame_id_, depth_frame_id_, ros::Time(0), transform);
-	    //tf_listener.lookupTransform("/world", depth_frame_id_, ros::Time(0), transform);
+	    //tf_listener.lookupTransform("world", depth_frame_id_, ros::Time(0), transform);
 	    tf::poseTFToEigen(transform, Tcam_offset);
 	    pcl::transformPointCloud (cloud, cloud, Tcam_offset);
 	    pcl::transformPointCloud (*myCloud, *myCloud, Tcam_offset);

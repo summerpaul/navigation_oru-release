@@ -30,7 +30,7 @@ int main(int argc, char **argv)
   ros::Rate r(10);
   while (ros::ok()) {
     visualization_msgs::Marker marker;
-    marker.header.frame_id = "/world";
+    marker.header.frame_id = "world";
     marker.header.stamp = ros::Time::now();
     marker.ns = "pallet";
     marker.id = 1;

@@ -15,7 +15,7 @@ namespace orunav_rviz
 
 void assignDefault(visualization_msgs::Marker &m)
 {
-  m.header.frame_id = "/world";
+  m.header.frame_id = "world";
   m.scale.x = 1;
   m.scale.y = 1;
   m.scale.z = 1;
